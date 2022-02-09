@@ -1,0 +1,175 @@
+*{
+    padding: 0; margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    padding: 3em;
+}
+
+main h2{
+    margin-top: 2em;
+}
+
+main p{
+    margin-top: 0.5em;
+    max-width: 800px;
+}
+
+main ul:first-of-type{
+    margin-left: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+}
+
+main ul:first-of-type li{
+    max-width: 300px;
+}
+
+main ul:first-of-type li p:first-of-type{
+    font-weight: 900;
+}
+
+main ul:nth-of-type(2){
+    margin-top:1em;
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main ul:nth-of-type(2) li{
+    margin: 1em 1em 0 0;
+    padding: 2.5em;
+
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px grey;
+    width: 30%;
+    max-width: 300px ;
+}
+
+/* -----------------  link ::before  ------------------*/
+main ul:nth-of-type(2) li a{
+    display: block;
+    margin-top: 1em;
+    padding: 1.5em;
+    box-shadow: 0 0 5px grey;
+
+    color: black;
+    text-decoration: none;
+    font-weight: 900;
+    
+    background: linear-gradient(135deg, orange, rgb(223, 77, 102));
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+main ul:nth-of-type(2) li a:first-of-type:hover::before{
+    content: ">     "
+}
+
+main ul:nth-of-type(2) li a:nth-of-type(2)::before{
+    content: "\1F49B  ";
+}
+
+/* -----------------  knop ::after  ------------------*/
+main ul:nth-of-type(2) li button{
+    position: relative;
+    margin-top: 1em;
+    padding: 1.5em;
+    box-shadow: 0 0 5px grey;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+main ul:nth-of-type(2) li button:hover::after {
+    content: 'Je hovert!';
+    color:#f06d06;
+    box-shadow: 0 0 5px grey;
+    background-color: white;
+    
+    position: absolute;
+    top: -30%;
+    right: -50px;
+    height: auto;
+
+    padding: 0.5em;
+    border-radius: 3px;
+}
+
+/* -----------------  foto overlay  ------------------*/
+main ul:nth-of-type(2) li div{
+    width: 100%;
+    margin-top:1em;
+    position: relative;
+}
+
+main ul:nth-of-type(2) li div img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+main ul:nth-of-type(2) li:nth-of-type(3) div:hover::after{
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-image: linear-gradient(120deg, #eaee44, #33d0ff);
+    opacity: 0.7;
+}
+
+/* -----------------  checkbox  ------------------*/
+main ul:nth-of-type(2) li form{
+    margin-top: 1em;
+}
+
+main ul:nth-of-type(2) li form input + label::after{
+    content: "  Not checked!";
+    color: red;
+}
+
+main ul li form input:checked + label::after{
+    content: "  Checked!";
+    color: green;
+}
+
+/* -----------------  blurry  ------------------*/
+main ul:nth-of-type(2) li:nth-of-type(5){
+    position: relative;
+}
+
+main ul:nth-of-type(2) li:nth-of-type(5) div img{
+    display: block;
+    margin-top: 1em;
+    width: 100%;
+    height: auto;
+    border: solid 3.5 transparent;
+}
+
+main ul:nth-of-type(2) li:nth-of-type(5) div::after{
+    content: "";
+    position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+    
+    border: solid 30px transparent;
+	background: rgba(#000, .03);
+	/* doesn't work in Firefox */
+    
+    backdrop-filter: blur(9px);
+	/* doesn't work in Edge */
+	--fill: linear-gradient(red, red);
+	-webkit-mask: var(--fill) padding-box, var(--fill);
+	-webkit-mask-composite: xor;
+    mask: var(--fill) padding-box exclude, var(--fill);
+    /* bron: https://codepen.io/thebabydino/pen/qvYZzQ?editors=1100*/
+}
+

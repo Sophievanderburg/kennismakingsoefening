@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style-sophie.css">
+    <title>Kennismakingsoefening</title>
+</head>
+<body>
+
+    <main>
+    <h1>
+        Kennismakingsoefening
+    </h1>
+    <h2>Over de ::before & ::after selectoren</h2>
+    <p>
+        Deze selectoren zorgen ervoor dat je content op je pagina kan laten zien, 
+        zonder dat deze in de HTML hoeven te staan. Het staat dus niet in de DOM-tree.
+    </p>
+
+    <h2>Soorten content in ::before & ::after</h2>
+    <ul>
+        <li>
+            <p>content: "a string"; </p>
+            <p>Een string. Dit kunnen woorden of cijfers zijn. </p>
+        </li>
+        <li>
+            <p>content: url(/path/to/image.jpg); </p>
+            <p>Een plaatje </p>
+        </li>
+        <li>
+            <p>content: ""; </p>
+            <p>Niks. Dan kun je vormen of overlays maken </p>
+        </li>
+    </ul>
+
+
+    <h2>Voorbeelden</h2>
+    <ul>
+        <li>
+            <h3>Optie 1: ::before</h3>
+            <a href="#">KOOP NU!</a>
+            <a href="#">KOOP NU!</a>
+        </li>
+        <li>
+            <h3>Optie 2: ::after bij een knop</h3>
+            <button>HOVER OVER MIJ</button>
+        </li>
+        <li>
+            <h3>Optie 3: Foto overlay</h3>
+            <div>
+            <img src="images/lucht.jpeg" alt="foto van de lucht">
+            </div>
+        </li>
+        <li>
+            <h3>Optie 4: ::after bij checkbox</h3>
+            <form>
+                <input type="checkbox" name="optie 1">
+                <label for="optie 1"> Optie 1</label>
+            </form>
+        </li>
+        <li>
+            <h3>Optie 5: blurry fotoborder</h3>
+            <div>
+            <img src="images/lucht.jpeg" alt="foto van de lucht">
+            </div>
+        </li>
+    </ul>
+
+    
+
+
+
+
+    </main>
+</body>
+</html>
